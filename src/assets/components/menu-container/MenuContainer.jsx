@@ -1,7 +1,8 @@
 import React from 'react'
 
-import MenuContent from './menuContent/menuContent'
+
 import Menubtn from './menuButton/menubtn'
+import MenuContent from './menuContent/menuContent'
 
 function MenuContainer() {
   return (
