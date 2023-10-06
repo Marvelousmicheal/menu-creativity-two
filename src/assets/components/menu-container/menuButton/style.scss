@@ -1,0 +1,65 @@
+@import "../../../styles/mixins";
+
+.menu-button-wrap {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  will-change: transform;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  .menu-btn {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: 0 0;
+    position: absolute;
+    right: 0;
+    z-index: 99;
+    will-change: transform;
+    transform: rotate(90deg);
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    span {
+      &::after,
+      &::before {
+        content: "";
+        width: 2px;
+        height: 48px;
+        position: absolute;
+        background-color: #111;
+        left: 50%;
+        top: 50%;
+        display: block;
+        will-change: transform;
+        transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+
+      &::before {
+        transform: translate(-5px, -50%) scaleY(0.7) rotate(180deg);
+      }
+
+      &::after {
+        transform: translate(5px, -50%) scaleY(0.7) rotate(0);
+      }
+    }
+  }
+
+  &.open {
+  
+    transition-delay: 0.2s;
+    .menu-btn {
+      transform: rotate(0deg);
+    }
+    span {
+      &::before {
+        transform: translate(-50%, -50%) scaleY(0.7) rotate(315deg);
+        background-color: white;
+      }
+      &::after {
+        transform: translate(-50%, -50%) scaleY(0.7) rotate(45deg);
+        background-color: white;
+      }
+    }
+  }
+}

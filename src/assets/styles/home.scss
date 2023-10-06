@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import "./_mixins.scss";
+
+
+
+
+
+
+body{
+    background-color: white;
+    font-family:  "Poppins", sans-serif;
+}
+.mainContainer{
+    position: relative;
+    height: 130vh;
+    display: flex;
+    align-items: flex-end;
+    width: calc(100vw - 50px);
+    margin: 0 auto;
+
+    h1{
+        font-size: clamp(100px, 15vw, 15vw);
+        font-weight: bold;
+        margin-bottom: 10vh;
+        max-width: 70vw;
+        text-transform: uppercase;
+        font-family: "Anton", sans-serif;
+        color: #111;
+    }
+    main{
+        display: flex;
+    }
+    .brand-description{
+        position: fixed;
+        z-index: 11;
+        top: 100px;
+        right: 10vw;
+        max-width: 120px;
+        color: #111;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 12px;
+        text-align: right;
+        transition: transform 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+        transition-delay: 0.5s;
+    }
+    @include mq("tablet", max) {
+        margin-left: 30px;
+        height: 80vh;
+     
+        width: calc(100vw - 126px); 
+        
+      }
+}
